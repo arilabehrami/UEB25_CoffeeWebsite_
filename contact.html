@@ -36,18 +36,69 @@
             <input type="search" name="" id=""placeholder="Search Here...">
 
         </div>
+        <div class="cart" id="cart">
+            <h2>Shporta</h2>
+            <ul id="cart-items" aria-live="polite">
+                <!-- Artikujt do të shtohen këtu dinamikisht -->
+            </ul>
+            <div class="cart-actions">
+                <button id="checkout">Checkout</button>
+                <button id="clear-cart" aria-label="Pastro shportën">
+                    <i class='bx bxs-trash-alt'></i>
+                </button>
+            </div>
+        </div>
 
-
-
-    <div class="user">
-        <h2>Login now</h2>
-        <input type="email"placeholder="Your Email...">
-        <input type="password" name="" id="" placeholder="Password">
-        <input type="submit" value="Login" class="login-btn">
-        <p>Forget Password<a href="#">Reset Now</a></p>
-        <p>Don't have account<a href="#">Create Now</a></p>
-    </div>
+        <div class="user">
+            <h2>Login Now</h2>
+            <input type="email" placeholder="Your Email...">
+            <input type="password" name=""  id="" placeholder=" Password...">
+            <input type="submit" value="Login" class="login-btn">
+            <p>Forgot Password <a href="#">Reset Now</a></p>
+            <p>Don't have account<a href="#">Create One</a></p>
+        </div>
     </header>
+    <section id="contact">
+        <div class="container">
+            <h1>Na Kontaktoni</h1>
+            <p>Jemi këtu për të ndihmuar! Na kontaktoni duke përdorur formularin më poshtë ose informacionet tona të kontaktit.</p>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="bx bxs-map"></i>
+                    <p>Adresa: Rruga Kryesore, Nr. 123, Podujevë</p>
+                </div>
+                <div class="info-item">
+                    <i class="bx bxs-phone"></i>
+                    <p>Telefoni: +383 44 123 456</p>
+                </div>
+                <div class="info-item">
+                    <i class="bx bxs-envelope"></i>
+                    <p>Email: info@biznesi.com</p>
+                </div>
+            </div>
+            
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Emri</label>
+                    <input type="text" id="name" name="name" placeholder="Shkruani emrin tuaj" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mesazhi</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Shkruani mesazhin tuaj" required></textarea>
+                </div>
+                
+                <button type="submit" id="submit-contact">Dërgo Mesazhin</button>
+            </form>
+        </div>
+    </section>
+    
 
 
 </body>
