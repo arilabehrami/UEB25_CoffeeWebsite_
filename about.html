@@ -10,10 +10,9 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
+     <a href="#" class="logo">
             <img src="images/logo1.png" alt="Logo">
         </a>
-
 
 
         <ul class="navbar">
@@ -35,15 +34,80 @@
             <input type="search" name="" id=""placeholder="Search Here...">
         </div>
 
-        \
+        <div class="cart" id="cart">
+            <h2>Shporta</h2>
+            <ul id="cart-items" aria-live="polite">
+                <!-- Artikujt do të shtohen këtu dinamikisht -->
+            </ul>
+            <div class="cart-actions">
+                <button id="checkout">Checkout</button>
+                <button id="clear-cart" aria-label="Pastro shportën">
+                    <i class='bx bxs-trash-alt'></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="user">
+            <h2>Login Now</h2>
+            <input type="email" placeholder="Your Email...">
+            <input type="password" name=""  id="" placeholder=" Password...">
+            <input type="submit" value="Login" class="login-btn">
+            <p>Forgot Password <a href="#">Reset Now</a></p>
+            <p>Don't have account<a href="#">Create One</a></p>
+        </div>
+    
     </header>
     
-    <div class="about-img">
-        <a href="#about-text-section" class="btn">Learn More</a>
-    </div>
-    <div id="about-text-section" class="about-text">
-        <p>Këtu është teksti që dëshiron të shfaqësh në seksionin e dytë.</p>
-    </div>
+
+    <section id="order-now">
+        <div class="order-image">
+            <img src="images/about.jpg" alt="Order Image">
+        </div>
+        <div class="container">
+            <h1>Porosit tani!</h1>
+            
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Emri</label>
+                    <input type="text" id="name" name="name" placeholder="Shkruani emrin tuaj" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="address">Adresa</label>
+                    <input type="text" id="address" name="address" placeholder="Shkruani adresën tuaj" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="product">Produkt</label>
+                    <select id="product" name="product">
+                        <option value="Produkt 1" data-price="20">Produkt 1 - $20</option>
+                        <option value="Produkt 2" data-price="30">Produkt 2 - $30</option>
+                        <option value="Produkt 3" data-price="40">Produkt 3 - $40</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="payment-method">Mënyra e Pagesës</label>
+                    <select id="payment-method" name="payment-method">
+                        <option value="Credit Card">Kartë krediti</option>
+                        <option value="PayPal">PayPal</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <button type="submit" id="submit-order">Dërgo Porosinë</button>
+                </div>
+            </form>
+    
+    
+        </div>
+    </section>
     
    
 </body>
