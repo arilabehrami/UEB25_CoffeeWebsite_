@@ -1,53 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faqja e kontaktit për kafenin tuaj. Na kontaktoni për informacione të mëtejshme.">
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo1.png" type="Logo">
+    <link rel="icon" href="images/logo1.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="./script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <style>
+          body{
+            background:black;
+          }
+
+        a {
+            color: #007bff; /* Ngjyrë blu për lidhjet */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0056b3; /* Ngjyrë blu më e errët kur është mbi */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
             <img src="images/logo1.png" alt="Logo">
         </a>
+
 
         
 
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
+            <li><a href="order.html">Order Now</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="customers.html">Customers</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     
+
         <div class="header-icon">
-            <i class='bx bx-menu' id="menu-icon"></i>
             <i class='bx bx-cart'id="cart-icon"></i>
             <i class='bx bx-search' id="search-icon"></i>
             <i class='bx bx-user' id="user-icon"></i>
         </div>
 
+
         <div class="search-box">
             <input type="search" name="" id=""placeholder="Search Here...">
 
         </div>
+
+
         <div class="cart" id="cart">
             <h2>Shporta</h2>
             <ul id="cart-items" aria-live="polite">
-                <!-- Artikujt do të shtohen këtu dinamikisht -->
+ 
             </ul>
             <div class="cart-actions">
                 <button id="checkout">Checkout</button>
-                <button id="clear-cart" aria-label="Pastro shportën">
-                    <i class='bx bxs-trash-alt'></i>
-                </button>
+                <button id="clear-cart">Pastro</button>
             </div>
         </div>
+
 
         <div class="user">
             <h2>Login Now</h2>
@@ -58,48 +81,98 @@
             <p>Don't have account<a href="#">Create One</a></p>
         </div>
     </header>
-    <section id="contact">
-        <div class="container">
-            <h1>Na Kontaktoni</h1>
-            <p>Jemi këtu për të ndihmuar! Na kontaktoni duke përdorur formularin më poshtë ose informacionet tona të kontaktit.</p>
-            
-            <div class="contact-info">
-                <div class="info-item">
-                    <i class="bx bxs-map"></i>
-                    <p>Adresa: Rruga Kryesore, Nr. 123, Podujevë</p>
-                </div>
-                <div class="info-item">
-                    <i class="bx bxs-phone"></i>
-                    <p>Telefoni: +383 44 123 456</p>
-                </div>
-                <div class="info-item">
-                    <i class="bx bxs-envelope"></i>
-                    <p>Email: info@biznesi.com</p>
-                </div>
-            </div>
-            
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Emri</label>
-                    <input type="text" id="name" name="name" placeholder="Shkruani emrin tuaj" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Mesazhi</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Shkruani mesazhin tuaj" required></textarea>
-                </div>
-                
-                <button type="submit" id="submit-contact">Dërgo Mesazhin</button>
-            </form>
-        </div>
+
+
+    
+
+
+
+    <section id="audio-player">
+        <audio controls autoplay>
+            <source src="images/audio.m4a" type="audio/mpeg">
+            Përshkrimi i skedarit audio (nëse nuk mbështetet tipi i skedarit).
+        </audio>
     </section>
     
 
 
+    <section id="contact">
+        <div class="PlaceOfCoffee">
+            <video  autoplay loop muted src="images/PlaceOfCoffee.mp4"></video>
+        </div>
+        <form id="contact-form" method="POST">
+            <label for="name">Emri:</label>
+            <input type="text" id="name" name="name" required placeholder="Shkruani emrin tuaj">
+    
+            <label for="email">Adresa e emailit:</label>
+            <input type="email" id="email" name="email" required placeholder="Shkruani adresën tuaj të emailit">
+    
+            <label for="subject">Subjekti:</label>
+            <input type="text" id="subject" name="subject" required placeholder="Subjekti i mesazhit">
+    
+            <label for="message">Mesazhi:</label>
+            <textarea id="message" name="message" required placeholder="Shkruani mesazhin tuaj"></textarea>
+    
+            <button type="submit">Dërgo Mesazhin</button>
+        </form>
+    </section>
+
+    <address>
+     <ul>
+        <li>Email: <a href="mailto:info@shembull.com">coffeeshop@hotmail.com</a></li>
+        <li>Telefon: +123 456 789</li>
+    </ul>
+    <a href="mailto:email@example.com">Dërgo një email</a>
+    </address>
+    
+
+     <section id="business-hours">
+        <h2>Orari i Punës</h2>
+        <ul>
+            <li><strong>Për të Hënën:</strong> 9:00 AM - 5:00 PM</li>
+            <li><strong>Për të Martën:</strong> 9:00 AM - 5:00 PM</li>
+            <li><strong>Për të Mërkurën:</strong> 9:00 AM - 5:00 PM</li>
+            <li><strong>Për të Enjten:</strong> 9:00 AM - 5:00 PM</li>
+            <li><strong>Për të Premten:</strong> 9:00 AM - 5:00 PM</li>
+            <li><strong>Për të Shtunën:</strong> 10:00 AM - 2:00 PM</li>
+            <li><strong>Për të Dielën:</strong> Mbyllur</li>
+        </ul>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Our Services</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="products.html">Shipping</a></li>
+                        <li><a href="contact.html">Returns</a></li>
+                        <li><a href="order.html">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="https://www.twitter.com/" aria-label="Twitter"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="https://www.youtube.com/" aria-label="Youtube"><i class='bx bxl-youtube'></i></a></li>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
