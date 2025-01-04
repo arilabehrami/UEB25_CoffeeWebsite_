@@ -7,7 +7,6 @@
         scroll-behavior: smooth;
         list-style: none;
         text-decoration: none;
-        text-transform: capitalize;
         transition: .2s linear;
 }
 :root{
@@ -372,6 +371,7 @@ h1 {
     border-right: 0.1rem solid #8B6B3E; 
 }
 #contact {
+    /* background-color:transparent; */
     position: relative;
     padding: 100px;
     border-radius: 8px;
@@ -388,7 +388,7 @@ h1 {
     margin-bottom: 5px;
 }
 #contact form input, #contact form textarea {
-    background-color: #010103;
+    background-color: var(#f0f0f0);
     color:#e0e0e0;
     padding: 10px;
     margin-bottom: 15px;
@@ -568,11 +568,11 @@ video{
     width: 50%;
     height: 100%;
     position: relative;
-    background-image: url('images/about-image.jpg'),url('images/p1.jpg');
+    /* background-image: url('images/about-image.jpg'),url('images/p1.jpg');
     background-size: cover, 50%;
-    background-position: center, bottom center; ;
+    background-position: center, bottom center; 
     border-radius: 50%;
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat, no-repeat; */
 }
 .about-text {
     position: absolute;
@@ -656,7 +656,7 @@ video{
 
 .testimonial:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.916);
 }
 .btn.add-to-cart {
     font-weight: 100;
@@ -855,6 +855,53 @@ address a {
 
 address a:hover {
     color: #0056b3; /* Ngjyrë më e errët kur është mbi */
+}
+
+#drag-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#draggable-title {
+    width: 100%;
+    max-width: 200px;
+    max-height: 50px;
+    font-size: 18px;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: move;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* Fsheh pjesët që dalin jashtë */
+    white-space: normal; /* Lejon thyerjen e tekstit në linja të reja */
+    word-wrap: break-word; /* Thyen fjalët e gjata nëse janë më të gjera se elementet */
+}
+#draggable-title:hover {
+    background-color: #2980b9;
+}
+#dropzone {
+    width: 200px;
+    height: 50px;
+    border: 2px dashed #95a5a6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: #7f8c8d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#dropzone:hover {
+    background-color: #bdc3c7;
+    color: #2c3e50;
 }
 
 
