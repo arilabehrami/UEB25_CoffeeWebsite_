@@ -28,6 +28,28 @@
             color: #0056b3; /* Ngjyrë blu më e errët kur është mbi */
         }
     </style>
+
+    <script>
+        function kontrollo(){
+            try {
+        // Merr të dhënat e formularit
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let subject = document.getElementById("subject").value;
+        let message = document.getElementById("message").value;
+
+        // Kontrollo nëse të gjitha fushat janë plotësuar dhe kutia është e shënuar
+        if (!name) throw "Ju lutem shkruani emrin tuaj!";
+        if (!email) throw "Ju lutem shkruani adresën tuaj të emailit!";
+
+        // Dërgimi i mesazhit të suksesit
+        alert("Mesazhi u dërgua me sukses!");
+    } catch (error) {
+        // Shfaq gabimin
+        alert(`Gabim: ${error}`);
+    }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -113,7 +135,8 @@
             <label for="message">Mesazhi:</label>
             <textarea id="message" name="message" required placeholder="Shkruani mesazhin tuaj"></textarea>
     
-            <button type="submit">Dërgo Mesazhin</button>
+            <!-- <button type="submit">Dërgo Mesazhin</button> -->
+            <button type="button" onclick="kontrollo()">Dërgo Mesazhin</button>
         </form>
     </section>
 
@@ -127,7 +150,12 @@
     
 
      <section id="business-hours">
-        <h2>Orari i Punës</h2>
+        <div id="drag-container">
+            <h1 id="draggable-title" draggable="true" ondragstart="dragStart(event)"><i> Orari i Punes</i>
+            </h1>
+            <div id="dropzone" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        </div>
+        
         <ul>
             <li><strong>Për të Hënën:</strong> 9:00 AM - 5:00 PM</li>
             <li><strong>Për të Martën:</strong> 9:00 AM - 5:00 PM</li>
@@ -148,6 +176,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Our Services</a></li>
                         <li><a href="contact.html">Privacy Policy</a></li>
+                        <li><a href="order.html">Order Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -156,7 +185,6 @@
                         <li><a href="#">FAQ</a></li>
                         <li><a href="products.html">Shipping</a></li>
                         <li><a href="contact.html">Returns</a></li>
-                        <li><a href="order.html">Order Status</a></li>
                         <li><a href="#">Payment Options</a></li>
                     </ul>
                 </div>
@@ -173,6 +201,6 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
+
