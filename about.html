@@ -20,9 +20,27 @@
             text-transform: none;
         }
         .highlight {
-            color: red;
+            color: rgb(255, 200, 0);
             font-weight: bold;
+            background: transparent;
         }
+        ol {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            margin-left: 20px;
+        }
+
+/* Stilizimi për lista të parendura (ul) dhe bullet points */
+        .custom-bullet {
+            list-style-type: square; /* Ndryshoni bullet point-in në katërkëndësh */
+            margin-left: 20px;  /*Kjo i shton një hapësirë në anën e majtë */
+        }
+
+        .custom-bullet li {
+            font-size: 0.9rem; /* Madhësia e tekstit për nënlistat është më e vogël */
+            color: #555; /* Ngjyra e tekstit të nënlistave */
+        }
+
     </style>
 
     <script>
@@ -73,8 +91,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-</script>
 </head>
 <body>
     <header>
@@ -98,10 +114,13 @@ $(document).ready(function() {
             <i class='bx bx-user' id="user-icon"></i>
         </div>
 
+        
         <div class="search-box">
-            <input type="search" name="" id=""placeholder="Search Here...">
+            <form action="/search" method="GET">
+                <input type="search" id="search" name="query" placeholder="Search Here..." required>
+                <button type="submit">Search</button>
+            </form>
         </div>
-
 
         <div class="cart" id="cart">
             <h2>Shporta</h2>
@@ -117,48 +136,80 @@ $(document).ready(function() {
 
         <div class="user">
             <h2>Login Now</h2>
-            <input type="email" placeholder="Your Email...">
-            <input type="password" name=""  id="" placeholder=" Password...">
-            <input type="submit" value="Login" class="login-btn">
-            <p>Forgot Password <a href="#">Reset Now</a></p>
-            <p>Don't have account<a href="#">Create One</a></p>
+            <form action="/login" method="POST">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email..." required>
+                </div>
+        
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password..." required>
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit" value="Login" class="login-btn">
+                </div>
+        
+                <!-- Links -->
+                <p>Forgot Password? <a href="/reset-password">Reset Now</a></p>
+                <p>Don't have an account? <a href="/register">Create One</a></p>
+            </form>
         </div>
+        
     
     </header>
-
+    
     
     <section id="about">
-        <div class="about-img">
-            <img src="images/aboutUS.jpg" alt="About Us">
-            <img src="images/p1.jpg" alt="About Us">
-        </div>
+        <h1>Reth nesh</h1>
         <div class="about-text">
             <a href="#company-timeline" class="btn">Rreth nesh!</a>
             <p>Kafe-ja jonë ka filluar si një ëndërr e vogël për të sjellë shije të freskëta dhe të veçanta në zemër të qytetit. Që nga viti 2020, kemi ofruar një përvojë unike për çdo klient që hap derën tonë.</p>
+            <ol>
+                <li> Hyr në llogari
+                    <ul class="custom-bullet">
+                        <li>Shkruaj emrin e përdoruesit</li>
+                        <li>Shkruaj fjalëkalimin</li>
+                    </ul>
+                </li>
+                <li> Zgjidh produktin
+                    <ul class="custom-bullet">
+                        <li>Shfleto kategoritë</li>
+                        <li>Shiko detajet e produktit</li>
+                    </ul>
+                </li>
+                <li> Paguaj dhe përfundoni porosinë</li>
+            </ol>
+            
+            
         </div>
     </section>
 
 
-    <button id="hide-btn">Fsheh informacione tjera:</button>
-    <button id="show-btn">Shfaq informacione tjera:</button>
-    <p id="text"><b><i>Menaxhere:Arila Behrami.</i></b></p>
+    <button id="hide-btn">Fsheh menaxherin:</button>
+    <button id="show-btn">Shfaq menaxherin:</button>
+    <p id="text"><i><b>Menaxhere: Aril&#235; Behrami</b></i></p>
 
     <section id="company-timeline">
-        <h2><i>Historia Jonë</i></h2>
+        <h2 style="text-align: center;"><i>Historia Jonë</i></h2>
         <div class="timeline">
             <div class="timeline-item">
-                <h3><abbr title="World Health Organization">2020</abbr></h3>
+                <h3><abbr title="Filluam">2020</abbr></h3>
                 <p><i>Filluam të ofrojmë shërbime online dhe të mundësojmë blerjet më të lehta për klientët tanë.
                     Kafeneja jonë është e lindur në vitin 2020, një vit që ndryshoi gjithçka për të gjithë ne. Ndërsa bota po kalonte një periudhë të pasigurtë dhe të vështirë, ne e pamë mundësinë për të krijuar një vend ku komuniteti mund të ndihej sërish i lidhur, i qetë dhe i mbështetur.
                     Në mes të sfidave të pandemisë, vendosëm të hapim një hapësirë ku çdo filxhan kafeje do të ishte një shenjë shprese dhe kujdesi për klientët tanë. Për ne, çdo kafe është më shumë se një pije – është një mundësi për t’u larguar nga stresi dhe për të krijuar momente të paharrueshme, qoftë përmes një takimi me miqtë apo një pushimi të shkurtër gjatë ditës.
-                    Kjo kafene është një vend ku mund të ndiheni në shtëpi, ku mund të shijoni kafenë tuaj të preferuar, të shoqëruar me një atmosferë ngrohtë dhe të ngushëlluar. Kemi menduar gjithçka – nga zgjedhja e kafeve të cilësisë më të lartë deri tek krijimi i një ambienti që e bën çdo vizitë të veçantë.
+                    Kjo kafene është një vend ku mund të ndiheni në shtëpi, ku mund të <span style="font-weight: bold;">shijoni kafenë tuaj </span>të preferuar, të shoqëruar me një atmosferë ngrohtë dhe të ngushëlluar. Kemi menduar gjithçka – nga zgjedhja e kafeve të cilësisë më të lartë deri tek krijimi i një ambienti që e bën çdo vizitë të veçantë.
                     Edhe pse fillimi ynë u ndikua nga ndryshimet dhe pasiguria që solli pandemia, qëllimi ynë ishte dhe mbetet i qartë: të krijojmë një hapësirë të sigurt dhe mikpritëse për të gjithë ata që duan të ndajnë një moment të thjeshtë kënaqësie në një botë gjithnjë e më të ngutshme.
                 </i>
             </p>
             </div>
             <div class="timeline-item">
-                <h3>2022</h3>
-                <p><i>Hapëm filialin tonë <mark> të parë ndërkombëtar </mark> për të ofruar shërbime në më shumë shtete.
+                <h3><abbr title="Gjatë procesit...">2022</abbr></h3>
+                <p><i>Hapëm filialin tonë <mark class="highlight"> të parë ndërkombëtar </mark> për të ofruar shërbime në më shumë shtete.
                     Kafeneja jonë ka nisur në vitin 2020, kur bota ishte përballur me sfida të papara. Pas një periudhe të vështirë, në vitin 2022, ne rifilluam me entuziazëm dhe vendosmëri, duke ofruar një vend ku mund të riktheheshin lidhjet sociale dhe shijet e preferuara të kafes. Ky vit ishte një periudhë rikuperimi, ku përkushtimi ynë ndaj cilësisë dhe mikpritjes u theksua edhe më shumë.
                     Në vitin 2022, ne ndihmuam klientët të gjenin ngushëllim dhe qetësi në mes të pasigurisë që kishte sjellë pandemia. Hapësira jonë u bë një vend ku mund të shijoheshin momente të thjeshta, por të rëndësishme – një filxhan kafeje i mirë, një bisedë e ngrohtë dhe një ambient që ofronte një frymë të re.
                     Edhe pse vitet ishin të vështira, ne qëndruam të fokusuar në krijimin e një hapësire mikpritëse dhe të sigurt. Ne besojmë që kafeja ka fuqinë të bashkojë dhe të krijojë kujtime të bukura, dhe kjo është ajo që e ka bërë këtë vit të paharrueshëm për ne.
@@ -166,7 +217,7 @@ $(document).ready(function() {
             </p>
             </div>
             <div class="timeline-item">
-                <h3>2024</h3>
+                <h3><abbr title="Sukseset tona!">2024</abbr></h3>
                 <p ><i>Pas suksesit të vazhdueshëm, jemi gati të zgjerim operacionet tona dhe të sjellim produkte të reja inovative.
                     Në vitin 2024, kafeneja jonë është më shumë se një vend ku shijohen kafe dhe pije të tjera. Pas kaq shumë sfidash dhe momentesh ndryshimi që kemi kaluar që nga hapja jonë në vitin 2020, ne jemi krenarë që kemi mundur të krijojmë një hapësirë ku çdo vizitor ndjen ngrohtësinë dhe përkushtimin tonë për t’ju ofruar eksperiencën më të mirë.
                     Viti 2024 është një vit i mbushur me mundësi të reja dhe inovacion. Kafeneja jonë ka evoluar dhe është bërë një vend ku teknologjia dhe tradita bashkohen për të ofruar një eksperiencë të veçantë. Me një koleksion të pasur të kafeve të zgjedhura dhe produkteve lokale, ne po vazhdojmë të krijojmë hapësira ku mund të takoheni, të relaksoheni dhe të ndani momente të paharrueshme me miqtë, kolegët apo familjen.
@@ -212,8 +263,8 @@ $(document).ready(function() {
                     <h4>Get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="products.html">Shipping</a></li>
-                        <li><a href="contact.html">Returns</a></li>
+                        <li><a href="products.html" target="_blank" >Shipping</a></li>
+                        <li><a href="contact.html" target="_blank">Returns</a></li>
                         <li><a href="#">Payment Options</a></li>
                     </ul>
                 </div>
@@ -227,6 +278,7 @@ $(document).ready(function() {
                         <li><a href="https://www.youtube.com/" aria-label="Youtube"><i class='bx bxl-youtube'></i></a></li>
                     </ul>
                     </div>
+                </div>
             </div>
         </div>
     </footer>
