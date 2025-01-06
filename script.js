@@ -43,7 +43,7 @@ function pershendetje1() {
 
 function shfaqVerejtje() {
     const warningElement = document.getElementById('warningMessage');
-    warningElement.innerHTML = "Kjo është një vërejtje!";
+    warningElement.innerHTML = "Nëse përballeni me ndonjë problem,ju lutem të kontaktoni shërbimin tonë të klientit. Faleminderit për mirëkuptimin tuaj!";
 }
 
 $(document).ready(function(){
@@ -115,8 +115,8 @@ function Order(name, email, address, product, payment) {
 }
 
 // Shembuj të instancave
-let porosia1 = new Order("Arila", "arila@hotmail.com", "Rruga 123", "Produkt 1", "PayPal");
-let porosia2 = new Order("Beni", "beni@gmail.com", "Rruga 456", "Produkt 2", "Credit Card");
+let porosia1 = new Order("Arila", "arila@hotmail.com", "Rruga 123", "Americano", "PayPal");
+let porosia2 = new Order("Beni", "beni@gmail.com", "Rruga 456", "Espresso", "Credit Card");
 
 // Testimi
 console.log(porosia1.displayOrder());
@@ -154,6 +154,8 @@ function drop(event) {
     event.target.appendChild(draggedElement);
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Inicializo datën aktuale në fushën e datës
     const currentDate = new Date();
@@ -166,4 +168,5 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Elementi me ID 'order-date' nuk u gjet!");
     }
 });
+
 
