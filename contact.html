@@ -27,6 +27,7 @@
         a:hover {
             color: #0056b3; /* Ngjyrë blu më e errët kur është mbi */
         }
+        
     </style>
 
     <script>
@@ -77,8 +78,10 @@
 
 
         <div class="search-box">
-            <input type="search" name="" id=""placeholder="Search Here...">
-
+            <form action="/search" method="GET">
+                <input type="search" id="search" name="query" placeholder="Search Here..." required>
+                <button type="submit">Search</button>
+            </form>
         </div>
 
 
@@ -93,30 +96,40 @@
             </div>
         </div>
 
-
         <div class="user">
             <h2>Login Now</h2>
-            <input type="email" placeholder="Your Email...">
-            <input type="password" name=""  id="" placeholder=" Password...">
-            <input type="submit" value="Login" class="login-btn">
-            <p>Forgot Password <a href="#">Reset Now</a></p>
-            <p>Don't have account<a href="#">Create One</a></p>
+            <form action="/login" method="POST">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email..." required>
+                </div>
+        
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password..." required>
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit" value="Login" class="login-btn">
+                </div>
+        
+                <!-- Links -->
+                <p>Forgot Password? <a href="/reset-password">Reset Now</a></p>
+                <p>Don't have an account? <a href="/register">Create One</a></p>
+            </form>
         </div>
     </header>
-
-
-    
-
-
 
     <section id="audio-player">
         <audio controls autoplay>
             <source src="images/audio.m4a" type="audio/mpeg">
-            Përshkrimi i skedarit audio (nëse nuk mbështetet tipi i skedarit).
+            Muzika nuk mund të gjendet.
         </audio>
     </section>
     
-
 
     <section id="contact">
         <div class="PlaceOfCoffee">
@@ -124,21 +137,26 @@
         </div>
         <form id="contact-form" method="POST">
             <label for="name">Emri:</label>
-            <input type="text" id="name" name="name" required placeholder="Shkruani emrin tuaj">
+            <input type="text" id="name" name="name" required placeholder="Shkruani emrin tuaj" autocomplete="on">
     
             <label for="email">Adresa e emailit:</label>
-            <input type="email" id="email" name="email" required placeholder="Shkruani adresën tuaj të emailit">
+            <input type="email" id="email" name="email" required placeholder="Shkruani adresën tuaj të emailit" form="contact-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
     
             <label for="subject">Subjekti:</label>
             <input type="text" id="subject" name="subject" required placeholder="Subjekti i mesazhit">
-    
+            <datalist id="subjects">
+                <option value="Informacion">Informacion</option>
+                <option value="Përporosi">Përporosi</option>
+            </datalist>
+
             <label for="message">Mesazhi:</label>
             <textarea id="message" name="message" required placeholder="Shkruani mesazhin tuaj"></textarea>
-    
-            <!-- <button type="submit">Dërgo Mesazhin</button> -->
+
+            <input type="number" id="age" name="age" min="18" max="99" placeholder="Shkruani moshën tuaj">
+
             <button type="button" onclick="kontrollo()">Dërgo Mesazhin</button>
         </form>
-    </section>
+
 
     <address>
      <ul>
@@ -151,10 +169,12 @@
 
      <section id="business-hours">
         <div id="drag-container">
-            <h1 id="draggable-title" draggable="true" ondragstart="dragStart(event)"><i> Orari i Punes</i>
-            </h1>
+            <h1 id="draggable-title" draggable="true" ondragstart="dragStart(event)"><i> Orari i Punes</i></h1>
             <div id="dropzone" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+            <div id="dropzone" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+            
         </div>
+        
         
         <ul>
             <li><strong>Për të Hënën:</strong> 9:00 AM - 5:00 PM</li>
@@ -166,6 +186,7 @@
             <li><strong>Për të Dielën:</strong> Mbyllur</li>
         </ul>
     </section>
+
     
     <footer class="footer">
         <div class="container">
@@ -183,8 +204,8 @@
                     <h4>Get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="products.html">Shipping</a></li>
-                        <li><a href="contact.html">Returns</a></li>
+                        <li><a href="products.html" target="_blank">Shipping</a></li>
+                        <li><a href="contact.html" target="_blank">Returns</a></li>
                         <li><a href="#">Payment Options</a></li>
                     </ul>
                 </div>
@@ -194,13 +215,14 @@
                     <ul>
                         <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class='bx bxl-facebook'></i></a></li>
                         <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a></li>
-                        <li><a href="https://www.twitter.com/" aria-label="Twitter"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="https://www.twitter.com/" aria-label="Twitter" ><i class='bx bxl-twitter'></i></a></li>
                         <li><a href="https://www.youtube.com/" aria-label="Youtube"><i class='bx bxl-youtube'></i></a></li>
                     </ul>
-                    </div>
+                </div>
             </div>
-        </div>
+         </div>
     </footer>
 </body>
 </html>
+
 
