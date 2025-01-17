@@ -27,12 +27,11 @@
     </style>
     <script>
         $(document).ready(function() {
-    // Përdorimi i selektorëve për të zgjedhur një element dhe për të ndryshuar përmbajtjen
-        $('#message').text('Ky mesazh u ndryshua me jQuery!');
+        $('#message').text('Faleminderit për besimin dhe mbështetjen tuaj!');
         $('#click-btn').click(function() {
         $('#response').text('Butoni u klikua!');
-        }
-    )});
+        });
+    });
     </script>
 </head>
 
@@ -106,7 +105,7 @@
         
         
     </header>
-    
+
 
     
     <section id="audio-player">
@@ -164,7 +163,14 @@
     <div id="warningMessage" style="color: red;"></div>
     <button onclick="shfaqVerejtje()">Shfaq Vërejtjen</button>
 
+    <div id="message"></div>
+    <button id="click-btn" >Kliko Mua</button>
+    <div id="response"></div>
+
+
 </body>
 </html>
+
+
 
 
