@@ -30,15 +30,14 @@
             margin-left: 20px;
         }
 
-/* Stilizimi për lista të parendura (ul) dhe bullet points */
         .custom-bullet {
-            list-style-type: square; /* Ndryshoni bullet point-in në katërkëndësh */
-            margin-left: 20px;  /*Kjo i shton një hapësirë në anën e majtë */
+            list-style-type: square; 
+            margin-left: 20px;  
         }
 
         .custom-bullet li {
-            font-size: 0.9rem; /* Madhësia e tekstit për nënlistat është më e vogël */
-            color: #555; /* Ngjyra e tekstit të nënlistave */
+            font-size: 0.9rem; 
+            color: #555; 
         }
 
     </style>
@@ -53,43 +52,43 @@
     });
 
 });
-    $(document).ready(function() {
-    $('#fade-btn').click(function() {
-        $('#box').fadeOut(); // Efekti FadeOut
-    });
-    $('#slide-btn').click(function() {
-        $('#box').slideUp(); // Efekti SlideUp
-    });
-    $('#animate-btn').click(function() {
-        $('#box').animate({width: '200px', height: '200px'}, 1000); // Animacion për madhësinë
-    });
-});
+//     $(document).ready(function() {
+//     $('#fade-btn').click(function() {
+//         $('#box').fadeOut(); // Efekti FadeOut
+//     });
+//     $('#slide-btn').click(function() {
+//         $('#box').slideUp(); // Efekti SlideUp
+//     });
+//     $('#animate-btn').click(function() {
+//         $('#box').animate({width: '200px', height: '200px'}, 1000); // Animacion për madhësinë
+//     });
+// });
 
-$(document).ready(function() {
-    $('#callback-btn').click(function() {
-        $('#callback-box').fadeOut(1000, function() {
-            alert('Efekti FadeOut përfundoi!');
-        });
-    });
-});
+// $(document).ready(function() {
+//     $('#callback-btn').click(function() {
+//         $('#callback-box').fadeOut(1000, function() {
+//             alert('Efekti FadeOut përfundoi!');
+//         });
+//     });
+// });
 
-$(document).ready(function() {
-    // Get dhe Set vlerë të tekstin
-    $('#set-text-btn').click(function() {
-        $('#text').text('Ky tekst është vendosur me jQuery!');
-    });
-    $('#get-text-btn').click(function() {
-        alert($('#text').text()); // Merr tekstin e paragrafit
-    });
+// $(document).ready(function() {
+//     // Get dhe Set vlerë të tekstin
+//     $('#set-text-btn').click(function() {
+//         $('#text').text('Ky tekst është vendosur me jQuery!');
+//     });
+//     $('#get-text-btn').click(function() {
+//         alert($('#text').text()); // Merr tekstin e paragrafit
+//     });
 
-    // Add dhe Remove klasa
-    $('#add-class-btn').click(function() {
-        $('#text').addClass('highlight');  // Shto klasa CSS
-    });
-    $('#remove-class-btn').click(function() {
-        $('#text').removeClass('highlight'); // Heq klasa CSS
-    });
-});
+//     // Add dhe Remove klasa
+//     $('#add-class-btn').click(function() {
+//         $('#text').addClass('highlight');  // Shto klasa CSS
+//     });
+//     $('#remove-class-btn').click(function() {
+//         $('#text').removeClass('highlight'); // Heq klasa CSS
+//     });
+// });
 </script>
 </head>
 <body>
@@ -284,3 +283,4 @@ $(document).ready(function() {
     </footer>
 </body>
 </html>
+
