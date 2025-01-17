@@ -15,10 +15,6 @@
 
 
     <style>
-          body{
-            background:black;
-          }
-
         a {
             color: #007bff; /* Ngjyrë blu për lidhjet */
             text-decoration: none;
@@ -33,23 +29,20 @@
     <script>
         function kontrollo(){
             try {
-        // Merr të dhënat e formularit
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let subject = document.getElementById("subject").value;
         let message = document.getElementById("message").value;
 
-        // Kontrollo nëse të gjitha fushat janë plotësuar dhe kutia është e shënuar
         if (!name) throw "Ju lutem shkruani emrin tuaj!";
         if (!email) throw "Ju lutem shkruani adresën tuaj të emailit!";
 
-        // Dërgimi i mesazhit të suksesit
         alert("Mesazhi u dërgua me sukses!");
     } catch (error) {
-        // Shfaq gabimin
         alert(`Gabim: ${error}`);
     }
         }
+        
     </script>
 </head>
 <body>
@@ -99,31 +92,28 @@
         <div class="user">
             <h2>Login Now</h2>
             <form action="/login" method="POST">
-                <!-- Email Field -->
+               <!--   Email Field -->
                 <!-- <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email..." required>
-                </div>
-                -->
-        
+                </div> -->
+       
                 <!-- Password Field -->
-                 <!-- <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Password..." required>
-                </div>
-                 -->
+                </div> -->
         
                 <!-- Submit Button -->
-               <!--  <div class="form-group">
+                <!-- <div class="form-group">
                     <input type="submit" value="Login" class="login-btn">
-                </div>
-                -->
+                </div> -->
         
                 <!-- Links -->
                 <p>Forgot Password? <a href="/reset-password">Reset Now</a></p>
                 <p>Don't have an account? <a href="/register">Create One</a></p>
             </form>
-        </div>
+        </div> 
     </header>
 
     <section id="audio-player">
@@ -146,14 +136,14 @@
             <input type="email" id="email" name="email" required placeholder="Shkruani adresën tuaj të emailit" form="contact-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
     
             <label for="subject">Subjekti:</label>
-            <input type="text" id="subject" name="subject" required placeholder="Subjekti i mesazhit">
+            <input type="text" id="subject" name="subject" list="subjects" required placeholder="Subjekti i mesazhit">
             <datalist id="subjects">
                 <option value="Informacion">Informacion</option>
                 <option value="Përporosi">Përporosi</option>
             </datalist>
 
             <label for="message">Mesazhi:</label>
-            <textarea id="message" name="message" required placeholder="Shkruani mesazhin tuaj"></textarea>
+            <textarea id="message" name="message" required placeholder="Shkruani mesazhin tuaj" rows="2"></textarea>
 
             <input type="number" id="age" name="age" min="18" max="99" placeholder="Shkruani moshën tuaj">
 
@@ -227,5 +217,8 @@
     </footer>
 </body>
 </html>
+
+
+
 
 
