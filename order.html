@@ -19,20 +19,20 @@
     <script>
     function kontrolloPorosine() {
     try {
-        // Merr të dhënat e formularit
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let address = document.getElementById("address").value;
         let product = document.getElementById("product").value;
         let payment = document.getElementById("payment-method").value;
         let isChecked = document.getElementById("accept-terms").checked;
+        let quantity = document.getElementById("product-suggestion").value;
 
-        // Validimi për secilën fushë
+
         validateName(name);
         validateEmail(email);
         validateAddress(address);
+        validateQuantity(quantity);
 
-        // Kontrollo nëse të gjitha fushat janë plotësuar dhe kutia është e shënuar
         if (!product) throw "Ju lutem zgjidhni një produkt!";
         if (!payment) throw "Ju lutem zgjidhni mënyrën e pagesës!";
         if (!isChecked) throw "Ju duhet të pranoni kushtet dhe rregullat!";
@@ -51,17 +51,20 @@
         console.log(`Vlera e pagesës: ${payment}`);
         console.log(`Vlera e pagesës është NaN: ${isNaN(payment)}`);
 
-        // Dërgimi i mesazhit të suksesit
-        // alert("Porosia u dërgua me sukses!");
+       
+
         setTimeout(function() {
             alert("Porosia u dërgua me sukses!");
         }, 3000);
     } catch (error) {
-        // Shfaq gabimin
         alert(`Gabim: ${error}`);
     }
 }
-
+function validateQuantity(quantity) {
+    if (!quantity || quantity <= 0) {
+        throw "Ju lutem shkruani një sasi të vlefshme!";
+    }
+}
 // Funksionet për validimin e të dhënave
 function validateName(name) {
     if (!name) throw "Emri është i detyrueshëm!";
@@ -76,7 +79,6 @@ function validateAddress(address) {
     if (!address) throw "Adresa është e detyrueshme!";
 }
 
-// Përdorimi i objekteve në JS
 function Product(name, price) {
     this.name = name;
     this.price = price;
@@ -93,7 +95,7 @@ console.log(product1.displayInfo());
 console.log(product2.displayInfo());
 console.log(product3.displayInfo());
 
-// Përdorimi i metodave match() dhe replace() për stringje
+
 let emailExample = "arila@example.com";
 let emailMatch = emailExample.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 if (emailMatch) {
@@ -150,7 +152,7 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
             </div>
         </div>
 
-         <div class="user">
+        <div class="user">
             <h2>Login Now</h2>
             <form action="/login" method="POST">
                <!--   Email Field -->
@@ -212,7 +214,7 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
                 </div>
                 <div class="form-group">
                     <label for="product-suggestion">Sasia</label>
-                    <input list="product" id="product-suggestion" name="product-suggestion" placeholder="Shkruani sasine ose merrni nje" required>
+                    <input list="products" id="product-suggestion" name="product-suggestion" placeholder="Shkruani sasine" required>
                     <datalist id="products">
                         <option value="1">
                         <option value="2">
@@ -237,13 +239,15 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
                     <button type="button" onclick="kontrolloPorosine()">Dërgo Porosinë</button>
                 
                 </div>
-                
+
                 <div class="form-group">
                     <label for="order-date">Data e Porosisë</label>
                     <input type="date" id="order-date" name="order-date" readonly>
                 </div>
                 
                 <p id="total-price">Çmimi total: $0.00</p>
+
+               
 
             </form>
         </div>
@@ -286,5 +290,6 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
     </footer>
 </body>
 </html>
+
 
 
