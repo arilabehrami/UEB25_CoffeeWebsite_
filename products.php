@@ -43,10 +43,10 @@
     </a>
 
     <ul class="navbar">
-        <li><a href="index.php" class="active">Home</a></li>
+        <li><a href="index.php" >Home</a></li>
         <li><a href="order.php">Order Now</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="products.php">Products</a></li>
+        <li><a href="products.php"class="active">Products</a></li>
         <li><a href="contact.php">Contact</a></li>
     </ul>
 
