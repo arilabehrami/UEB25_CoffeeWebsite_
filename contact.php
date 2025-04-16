@@ -1,3 +1,39 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $subject = trim($_POST["subject"]);
+    $message = trim($_POST["message"]);
+    $age = trim($_POST["age"]);
+
+    // Validime me regex të ndara dhe të shpjeguara
+    $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
+    $emailRegex ="/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/"; // Email i thjeshtuar
+    $ageRegex = "/^\d{1,2}$/"; // Lejon vetëm numra 1 deri 2 shifra
+
+    // Emri
+    if (preg_match($nameRegex, $name)) {
+        echo "Emri nuk është valid! Vetëm shkronja lejohen.<br />";
+    }
+
+    // Emaili
+    elseif (preg_match($emailRegex, $email)) {
+        echo "Emaili nuk është valid!<br />";
+    }
+
+    // Mosha
+    elseif (!empty($age) && !preg_match($ageRegex, $age)) {
+        echo "Mosha nuk është valide. Duhet të jetë një numër 1-99.<br />";
+    }
+
+    // Nëse të gjitha janë OK
+    else {
+        echo "Të dhënat janë të sakta! Mesazhi u dërgua me sukses.<br />";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="sq">
 <head>
@@ -27,18 +63,29 @@
     </style>
 
     <script>
-        function kontrollo(){
-            try {
+        
+function kontrollo(){
+    try {
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let subject = document.getElementById("subject").value;
         let message = document.getElementById("message").value;
+        let age = document.getElementById("age").value;
 
         if (!name) throw "Ju lutem shkruani emrin tuaj!";
+        if (!/^[A-Za-z\s]+$/.test(name)) throw "Emri duhet të përmbajë vetëm shkronja!";
         if (!email) throw "Ju lutem shkruani adresën tuaj të emailit!";
+        if (!subject) throw "Ju lutem shkruani subjektin!";
+        if (!message) throw "Ju lutem shkruani mesazhin!";
+        if (age && (age < 18 || age > 99)) throw "Mosha duhet të jetë midis 18 dhe 99!";
 
-        alert("Mesazhi u dërgua me sukses!");
+        return true;
     } catch (error) {
+        alert(`Gabim: ${error}`);
+        return false;
+    }
+}
+ catch (error) {
         alert(`Gabim: ${error}`);
     }
         }
@@ -125,7 +172,7 @@
         <div class="PlaceOfCoffee">
             <video  autoplay loop muted src="images/PlaceOfCoffee.mp4"></video>
         </div>
-        <form id="contact-form" method="POST">
+        <form id="contact-form" method="POST" onsubmit="return kontrollo();">
             <label for="name">Emri:</label>
             <input type="text" id="name" name="name" required placeholder="Shkruani emrin tuaj" autocomplete="on">
     
@@ -144,7 +191,7 @@
 
             <input type="number" id="age" name="age" min="18" max="99" placeholder="Shkruani moshën tuaj">
 
-            <button type="button" onclick="kontrollo()">Dërgo Mesazhin</button>
+            <button type="submit">Dërgo Mesazhin</button>
         </form>
 
 
@@ -214,6 +261,10 @@
     </footer>
 </body>
 </html>
+
+
+
+
 
 
 
