@@ -178,13 +178,13 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
         <?php
      
         $email = $_POST['email']; 
-          $regexEmail = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+          $regexEmail = "/^[a-zA-Z0-9\.]+@[a-zA-Z0-9\.-]+\.[a-zA-Z]{3,5}$/";
 
         if (preg_match($regexEmail, $email)) {
          echo "Email-i është i vlefshëm!";
     
        } else {
-         echo "Ju lutem fusni një email të vlefshëm.";
+         echo "Ju lutem shkruani një email të vlefshëm.";
       }
       ?>
 
