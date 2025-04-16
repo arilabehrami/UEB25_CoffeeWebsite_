@@ -1,3 +1,5 @@
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -268,6 +270,29 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
     
 
     <footer class="footer">
+
+
+
+<?php
+include 'orderOOP.php';
+
+$coffees = [
+    new SpecialtyCoffee("Espresso", "Italy", "Dark", "Bold, Smooth"),
+    new SpecialtyCoffee("Latte", "France", "Medium", "Creamy, Mild"),
+    new SpecialtyCoffee("Cappuccino", "Brazil", "Medium-Dark", "Frothy, Rich"),
+    new SpecialtyCoffee("Americano", "USA", "Light", "Smooth, Mellow")
+];
+
+echo "<div style='margin: 20px; font-weight: bold; text-align: center; color: white;'>";
+echo "<h2 style='margin-bottom: 30px;'>“You can't buy happiness, but you can buy coffee, and that's pretty close.” ☕</h2>";
+
+foreach ($coffees as $coffee) {
+    echo "<div style='margin-bottom: 10px;'>" . $coffee->displayInfo() . "</div>";
+}
+
+echo "</div>";
+?>
+
         <div class="container">
             <div class="row">
                 <div class="footer-col">
