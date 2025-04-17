@@ -15,7 +15,7 @@ $lokacionet = [
 //Funksioni qe shfaq te dhenat e kompanise (vitin e themelimit, si dhe nje mesazh mireseardhje)
 function shfaqCompInfo() {
     echo "<h1>Welcome to " . coffeeShopName . "! Here's all you need to know about us.</h1>";
-    echo "<p>Founded in " . foundedYear . ", our mission is: " . $GLOBALS['misioniKafenese'] . ".</p>";
+    echo "<p>Founded in " . foundedYear . ", our mission is: " . $GLOBALS['misioniKafenese'] . "</p>";
 }
 
 //Funksioni qe shfaq team members
@@ -50,8 +50,8 @@ shfaqTeamMembers($teamMembers);
 shfaqLokacionet($lokacionet);
 
 //Debugging me funksionin var_dump()
-echo "<pre>";
+ob_start(); //Fillimi i marrjes se output-it
 var_dump($teamMembers);
 var_dump($lokacionet);
-echo "</pre>";
+$output = ob_get_clean(); //Marrja e output-it dhe pastrimi i buffer-it
 ?>
