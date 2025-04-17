@@ -56,17 +56,17 @@
 </head>
 <body>
     <header>
-     <a href="index.html" class="logo">
+     <a href="index.php" class="logo">
             <img src="images/logo1.png" alt="Logo">
         </a>
 
 
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="order.html">Order Now</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="order.php">Order Now</a></li>
+            <li><a href="about.php" class="active">About</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     
 
@@ -215,18 +215,18 @@
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Our Services</a></li>
-                        <li><a href="contact.html">Privacy Policy</a></li>
-                        <li><a href="order.html">Order Now</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="products.php">Our Services</a></li>
+                        <li><a href="contact.php">Privacy Policy</a></li>
+                        <li><a href="order.php">Order Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="products.html" target="_blank" >Shipping</a></li>
-                        <li><a href="contact.html" target="_blank">Returns</a></li>
+                        <li><a href="products.php" target="_blank" >Shipping</a></li>
+                        <li><a href="contact.php" target="_blank">Returns</a></li>
                         <li><a href="#">Payment Options</a></li>
                     </ul>
                 </div>
