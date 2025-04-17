@@ -206,10 +206,14 @@
                 <p>"Në çdo rast kur kam pasur nevojë për mbështetje, ekipi ishte aty për të ndihmuar." - Klienti 3</p>
             </div>
         </div>
-    </section>
-    
+    </section> 
 
     <footer class="footer">
+        
+    <?php
+    include 'aboutLogic.php';
+    ?>
+
         <div class="container">
             <div class="row">
                 <div class="footer-col">
