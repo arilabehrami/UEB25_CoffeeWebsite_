@@ -1,3 +1,12 @@
+<?php
+// Funksion për të pastruar emrin e produktit duke përdorur RegEx
+function sanitizeProductName($name) {
+    $name = preg_replace("/[^a-zA-Z\s]/", "", $name); // Hiq karakteret e padëshiruara
+    $name = trim(preg_replace("/\s+/", " ", $name));  // Normalizo hapësirat
+    return $name;
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,29 +22,29 @@
 
     <style>
     table {
-    width: 100%;
-    border-spacing: 8px; 
+        width: 100%;
+        border-spacing: 8px; 
     }
 
     th, td {
-    text-align: left;
-    padding: 12px; 
-    border: 1px solid #ddd;
+        text-align: left;
+        padding: 12px; 
+        border: 1px solid #ddd;
     }
 
     th {
-    background-color: #f1f1f1; 
-    color: #333; 
-    font-weight: bold; 
+        background-color: #f1f1f1; 
+        color: #333; 
+        font-weight: bold; 
     }
 
     td {
-    background-color: #ffffff; 
-    color: #555; 
+        background-color: #ffffff; 
+        color: #555; 
     }
     </style>
 </head>
-<body>
+<body onload="pershendetje1()">
 
 <header>
     <a href="index.php" class="logo">
@@ -43,15 +52,15 @@
     </a>
 
     <ul class="navbar">
-        <li><a href="index.php" >Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="order.php">Order Now</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="products.php"class="active">Products</a></li>
+        <li><a href="products.php" class="active">Products</a></li>
         <li><a href="contact.php">Contact</a></li>
     </ul>
 
     <div class="header-icon">
-        <i class='bx bx-cart'id="cart-icon"></i>
+        <i class='bx bx-cart' id="cart-icon"></i>
         <i class='bx bx-search' id="search-icon"></i>
         <i class='bx bx-user' id="user-icon"></i>
     </div>
@@ -62,6 +71,7 @@
             <button type="submit">Search</button>
         </form>
     </div>
+
     <div class="cart" id="cart">
         <h2>Shporta</h2>
         <ul id="cart-items" aria-live="polite"></ul>
@@ -94,8 +104,6 @@
     </div>
 </header>
 
-<body onload="pershendetje1()">
-
 <section class="products" id="products">
 <div class="products-container">
     <?php
@@ -104,20 +112,17 @@
         public $price;
         public $image;
 
-        // Constructor
         public function __construct($name, $price, $image) {
             $this->name = $name;
             $this->price = $price;
             $this->image = $image;
         }
 
-        // Destructor
         public function __destruct() {
-            // Optional cleanup code
+            // Opsionale
         }
     }
 
-    // Array of products
     $products = [
         new Product("Americano", 25, "images/menu-1.png"),
         new Product("Espresso", 20, "images/menu-2.png"),
@@ -129,22 +134,21 @@
         new Product("Ristretto", 20, "images/menu-8.png"),
         new Product("Affogato", 30, "images/menu-9.png"),
         new Product("Turkish Coffee", 35, "images/cart-item1.png"),
-        new Product("Coffee", 25, "images/cart-item2.png"),
-        new Product("Coffee", 25, "images/cart-item3.png")
+        new Product("Coffee!", 25, "images/cart-item2.png"),
+        new Product("Coffee#", 25, "images/cart-item3.png")
     ];
 
-    // Sorting the products array by price (ascending order)
     usort($products, function($a, $b) {
         return $a->price - $b->price;
     });
 
     foreach ($products as $product) {
         echo '<div class="box">';
-        echo '<img src="' . $product->image . '" alt="Kjo eshte ' . $product->name . '">';
-        echo '<h3>' . $product->name . '</h3>';
+        echo '<img src="' . $product->image . '" alt="Kjo eshte ' . sanitizeProductName($product->name) . '">';
+        echo '<h3>' . sanitizeProductName($product->name) . '</h3>';
         echo '<div class="content">';
         echo '<span>' . $product->price . '&euro;</span>';
-        echo '<button class="btn add-to-cart" data-product-id="1" data-product-name="' . $product->name . '" data-product-price="' . $product->price . '">Add to Cart</button>';
+        echo '<button class="btn add-to-cart" data-product-id="1" data-product-name="' . sanitizeProductName($product->name) . '" data-product-price="' . $product->price . '">Add to Cart</button>';
         echo '</div>';
         echo '</div>';
     }
@@ -190,3 +194,4 @@
 
 </body>
 </html>
+
