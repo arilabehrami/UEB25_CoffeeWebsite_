@@ -7,6 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $age = trim($_POST["age"]);
     $phone = trim($_POST["phone"]); 
 
+    $message = preg_replace('/\s+/', ' ', $message); // Zëvendëson hapësirat e tepërta me një të vetme
+    $message = trim($message); // Largon hapësirat nga fillimi/fundi
+
     // Validime me regex të ndara dhe të shpjeguara
     $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
     $emailRegex = "/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/";// Email i thjeshtuar
@@ -19,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Emaili
-    elseif (preg_match($emailRegex, $email)) {
+    elseif (!preg_match($emailRegex, $email)) {
         echo "Emaili nuk është valid!<br />";
     }
 
