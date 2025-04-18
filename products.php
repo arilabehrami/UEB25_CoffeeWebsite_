@@ -134,6 +134,10 @@
         return $a->price - $b->price;
     });
 
+    function sanitizeProductName($name) {
+        return htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    }
+
     foreach ($products as $product) {
         echo '<div class="box">';
         echo '<img src="' . $product->image . '" alt="Kjo eshte ' . sanitizeProductName($product->name) . '">';
