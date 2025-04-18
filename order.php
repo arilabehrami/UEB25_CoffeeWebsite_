@@ -177,19 +177,7 @@ console.log(`Email i përditësuar: ${updatedEmail}`);
                 <p>Forgot Password? <a href="/reset-password">Reset Now</a></p>
                 <p>Don't have an account? <a href="/register">Create One</a></p>
             </form>
-        <?php
-     
-        $email = $_POST['email']; 
-          $regexEmail = "/^[a-zA-Z0-9\.]+@[a-zA-Z0-9\.-]+\.[a-zA-Z]{3,5}$/";
-
-        if (preg_match($regexEmail, $email)) {
-         echo "Email-i është i vlefshëm!";
-    
-       } else {
-         echo "Ju lutem shkruani një email të vlefshëm.";
-      }
-      ?>
-
+        
               
     
     </header>
