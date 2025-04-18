@@ -5,11 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = trim($_POST["subject"]);
     $message = trim($_POST["message"]);
     $age = trim($_POST["age"]);
+    $phone = trim($_POST["phone"]); 
 
     // Validime me regex të ndara dhe të shpjeguara
     $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
     $emailRegex = "/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/";// Email i thjeshtuar
     $ageRegex = "/^\d{1,2}$/"; // Lejon vetëm numra 1 deri 2 shifra
+    $phoneRegex = "/^(\+?\d{1,4}[\s-]?)?(\(?\d{2,4}\)?[\s-]?)?\d{3,4}[\s-]?\d{3,4}$/"; 
 
     // Emri
     if (!preg_match($nameRegex, $name)) {
@@ -24,6 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Mosha
     elseif (!empty($age) && !preg_match($ageRegex, $age)) {
         echo "Mosha nuk është valide. Duhet të jetë një numër 1-99.<br />";
+    }
+    // Numri i telefonit (nëse është futur)
+    elseif (!empty($phone) && !preg_match($phoneRegex, $phone)) {
+        echo "Numri i telefonit nuk është në format të saktë!<br />";
     }
 
     // Nëse të gjitha janë OK
