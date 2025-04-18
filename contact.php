@@ -8,11 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validime me regex të ndara dhe të shpjeguara
     $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
-    $emailRegex ="/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/"; // Email i thjeshtuar
+    $emailRegex = "/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/";// Email i thjeshtuar
     $ageRegex = "/^\d{1,2}$/"; // Lejon vetëm numra 1 deri 2 shifra
 
     // Emri
-    if (preg_match($nameRegex, $name)) {
+    if (!preg_match($nameRegex, $name)) {
         echo "Emri nuk është valid! Vetëm shkronja lejohen.<br />";
     }
 
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     </style>
 
-    <script>
+    <!-- <script>
         
 function kontrollo(){
     try {
@@ -88,9 +88,9 @@ function kontrollo(){
  catch (error) {
         alert(`Gabim: ${error}`);
     }
-        }
         
-    </script>
+        
+    </script> -->
 </head>
 <body>
     <header>
