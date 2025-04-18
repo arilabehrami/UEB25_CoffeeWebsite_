@@ -211,7 +211,7 @@
     <footer class="footer">
         
     <?php
-    include 'aboutLogic.php';
+    include 'includes/aboutLogic.php';
     ?>
 
         <div class="container">
