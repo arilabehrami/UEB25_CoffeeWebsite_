@@ -1,11 +1,3 @@
-<?php
-// Funksion për të pastruar emrin e produktit duke përdorur RegEx
-function sanitizeProductName($name) {
-    $name = preg_replace("/[^a-zA-Z\s]/", "", $name); // Hiq karakteret e padëshiruara
-    $name = trim(preg_replace("/\s+/", " ", $name));  // Normalizo hapësirat
-    return $name;
-}
-?>
 
 <html lang="en">
 <head>
