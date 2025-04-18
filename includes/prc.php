@@ -40,7 +40,8 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color:burlywood;
+    background-color:#D1B08D;
+    color:white;
 }
 .sort-box h5 {
     margin-top: 0;
