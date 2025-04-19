@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
     $emailRegex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/";// Email i thjeshtuar
     $ageRegex = "/^\d{1,2}$/"; // Lejon vetëm numra 1 deri 2 shifra
-    $phoneRegex = "/^(\+383|0)\s?\d{2}\s?\d{3}\s?\d{3}$/"; 
+    $phoneRegex = "/^(\+383|0)[\s\-\/\(\)]*\d{2}[\s\-\/\(\)]*\d{3}[\s\-\/\(\)]*\d{3}$/"; 
 
     // Emri
     if (!preg_match($nameRegex, $name)) {
