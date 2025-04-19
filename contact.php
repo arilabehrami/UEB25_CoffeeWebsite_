@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validime me regex të ndara dhe të shpjeguara
     $nameRegex = "/^[a-zA-Z\s]+$/"; // Lejon vetëm shkronja dhe hapësira
-    $emailRegex = "/^[^0-9\-\.\@][a-zA-Z0-9\-._]+@[a-z] {2,}\.[a-z] {2,5}/";// Email i thjeshtuar
+    $emailRegex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";// Email i thjeshtuar
     $ageRegex = "/^\d{1,2}$/"; // Lejon vetëm numra 1 deri 2 shifra
     $phoneRegex = "/^(\+?\d{1,4}[\s-]?)?(\(?\d{2,4}\)?[\s-]?)?\d{3,4}[\s-]?\d{3,4}$/"; 
 
