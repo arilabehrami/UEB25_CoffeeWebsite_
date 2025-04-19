@@ -5,8 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = trim($_POST["subject"]);
     $message = trim($_POST["message"]);
     $age = trim($_POST["age"]);
-    $phone = trim($_POST["phone"]); 
-
+    if (isset($_POST["phone"])) {
+        $phone = $_POST["phone"];
+    } else {
+        $phone = "";
+    }
+    
     $message = preg_replace('/\s+/', ' ', $message); // Zëvendëson hapësirat e tepërta me një të vetme
     $message = trim($message); // Largon hapësirat nga fillimi/fundi
 
